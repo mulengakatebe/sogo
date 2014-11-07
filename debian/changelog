@@ -1,3 +1,9 @@
+sogo (2.2.7-zentyal3) trusty; urgency=medium
+
+  [ Jenkins Zentyal (Zentyal GPG) ]
+
+ -- Jenkins Zentyal (Zentyal GPG) <jenkins@zentyal.com>  Mon, 27 Oct 2014 13:09:35 +0100
+
 sogo (2.2.7-zentyal2) trusty; urgency=medium
 
   [ Miguel Julián ]
