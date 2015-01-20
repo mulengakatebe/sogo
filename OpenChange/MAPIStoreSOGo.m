@@ -174,8 +174,7 @@ sogo_backend_init (void)
     }
 
   registry = [SoProductRegistry sharedProductRegistry];
-  [registry scanForProductsInDirectory: @"/usr/lib/GNUstep/SOGo"];
-
+  [registry scanForProductsInDirectory: SOGO_BUNDLES_DIR];
 
   loader = [SOGoProductLoader productLoader];
   [loader loadProducts: [NSArray arrayWithObject: BACKEND_BUNDLE_NAME]];
