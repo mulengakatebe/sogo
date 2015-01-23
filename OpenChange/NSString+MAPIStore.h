@@ -35,6 +35,7 @@
 - (NSData *) convertHexStringToBytes;
 
 - (NSString *) stringByReplacingPercentEscapesUsingEncoding: (NSStringEncoding) encoding;
+- (NSString *) stringByEncodingForURL;
 
 @end
 

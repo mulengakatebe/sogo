@@ -1230,7 +1230,7 @@ _parseCOPYUID (NSString *line, NSArray **destUIDsP)
       targetSOGoFolder = [targetFolder sogoObject];
       if (isMove)
         {
-          urlNamePart = [newFolderName stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+          urlNamePart = [newFolderName stringByEncodingForURL];
           newFolderURL = [NSURL URLWithString: urlNamePart
                                 relativeToURL: [targetSOGoFolder imap4URL]];
           error = [[sogoObject imap4Connection]

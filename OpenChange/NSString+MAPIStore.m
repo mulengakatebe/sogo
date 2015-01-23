@@ -198,4 +198,33 @@
   return newString;
 }
 
+- (NSString *) stringByEncodingForURL
+{
+  /* Implemented in iOS7 or above:
+     [folderName stringByAddingPercentEncodingWithAllowedCharacters: URLPathAllowedCharacterSet ()];
+  */
+  NSMutableString *output;
+  const unsigned char *source;
+  unsigned char thisChar;
+  unsigned int i, sourceLen;
+
+  output = [NSMutableString string];
+  source = (const unsigned char *)[self UTF8String];
+  sourceLen = strlen((const char *)source);
+
+  for (i = 0; i < sourceLen; ++i) {
+    thisChar = source[i];
+    if (thisChar == '.' || thisChar == '-' || thisChar == '_' || thisChar == '~' || 
+        (thisChar >= 'a' && thisChar <= 'z') ||
+        (thisChar >= 'A' && thisChar <= 'Z') ||
+        (thisChar >= '0' && thisChar <= '9')) {
+      [output appendFormat:@"%c", thisChar];
+    } else {
+      [output appendFormat:@"%%%02X", thisChar];
+    }
+  }
+
+  return output;
+}
+
 @end
