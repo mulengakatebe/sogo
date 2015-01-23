@@ -6,9 +6,13 @@ DIV.appointmentLabel
   width: 3em; }
 
 DIV#eventView
-{ overflow: hidden;
+{ overflow: auto;
   position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0; }
+  top: 40px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  padding: 20px; }
 
 DIV#eventView > DIV
 { padding: 1em; }
@@ -45,13 +49,10 @@ UL.contactList LI._selected
 DIV.contactSelector
 { margin: 0px; }
 
-LABEL, SPAN.checkBoxList
+LABEL
 { display: block;
   position: relative;
-  line-height: 1.5em;
-  height: 1.5em;
   margin-left: 0px;
-  margin-bottom: .5em;
   width: 100%; }
 
 SELECT

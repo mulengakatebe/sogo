@@ -8,6 +8,11 @@ FRAMEWORK_NAME = SOGo
 
 SOGo_VERSION=$(MAJOR_VERSION).$(MINOR_VERSION).$(SUBMINOR_VERSION)
 
+SOGo_LANGUAGES = Arabic BrazilianPortuguese Catalan Czech Danish Dutch English Finnish French German Hungarian Icelandic Italian NorwegianBokmal NorwegianNynorsk Polish Russian Slovak SpanishSpain SpanishArgentina Swedish Ukrainian Welsh
+
+SOGo_LOCALIZED_RESOURCE_FILES += \
+	Locale
+
 #SOGo_INSTALL_DIR = $(SOGO_LIBDIR)
 SOGo_INSTALL_DIR = $(DESTDIR)$(GNUSTEP_$(GNUSTEP_INSTALLATION_DOMAIN)_FRAMEWORKS)
 
@@ -65,7 +70,6 @@ SOGo_HEADER_FILES = \
 	SOGoDAVAuthenticator.h		\
 	SOGoProxyAuthenticator.h	\
 	SOGoStaticAuthenticator.h	\
-	SOGoWebAuthenticator.h		\
 	SOGoWebDAVAclManager.h		\
 	SOGoWebDAVValue.h		\
 	SOGoMailer.h			\
@@ -88,6 +92,7 @@ all::
 SOGo_OBJC_FILES = \
 	SOGoBuild.m \
 	SOGoProductLoader.m		\
+	SOGoSQLInit.m			\
 	\
 	BSONCodec.m			\
 	EOBitmaskQualifier.m		\
@@ -144,7 +149,6 @@ SOGo_OBJC_FILES = \
 	SOGoDAVAuthenticator.m		\
 	SOGoProxyAuthenticator.m	\
 	SOGoStaticAuthenticator.m	\
-	SOGoWebAuthenticator.m		\
 	SOGoWebDAVAclManager.m		\
 	SOGoWebDAVValue.m		\
 	SOGoMailer.m			\
@@ -164,7 +168,11 @@ SOGo_OBJC_FILES = \
 SOGo_RESOURCE_FILES = \
 	SOGoDefaults.plist \
 	DAVReportMap.plist \
-	CASLogoutRequestMap.plist
+	CASLogoutRequestMap.plist \
+	SOGoProfile.sql \
+	SOGoProfile-oracle.sql \
+	OCSFolderInfo.sql \
+	OCSFolderInfo-oracle.sql
 
 ifeq ($(saml2_config), yes)
 	SOGo_HEADER_FILES += SOGoSAML2Session.h SOGoSAML2Exceptions.h

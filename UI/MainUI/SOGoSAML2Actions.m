@@ -36,7 +36,7 @@
 #import <SOGo/SOGoSAML2Session.h>
 #import <SOGo/SOGoSession.h>
 #import <SOGo/SOGoSystemDefaults.h>
-#import <SOGo/SOGoWebAuthenticator.h>
+#import <MainUI/SOGoWebAuthenticator.h>
 
 @interface SOGoSAML2Actions : WODirectAction
 @end
